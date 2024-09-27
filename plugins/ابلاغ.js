@@ -4,7 +4,7 @@ if (text.length < 10) throw `*[❗تحذير❗] البلاغ لا يقل عن �
 if (text.length > 1000) throw `*[❗تحذير❗] البلاغ لا يزيد عن الف حرف*`
 let teks = `*❒═════[إبلاغ مهم]═════❒*\n*┬*\n*├❧ الرقم:* wa.me/${m.sender.split`@`[0]}\n*┴*\n*┬*\n*├❧ البلاغ:* ${text}\n*┴*`
 conn.reply('972546887176@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, null, { contextInfo: { mentionedJid: [m.sender] }})
-conn.reply('@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, null, { contextInfo: { mentionedJid: [m.sender] }})
+conn.reply('201224563219@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, null, { contextInfo: { mentionedJid: [m.sender] }})
 m.reply(`*[ ✔️ ] تم إبلاغ المطور و انشاء الله يكون ف خدمتك في أسرع وقت 🐦🫶🏻❤️*`)
 }
 handler.help = ['reporte', 'request'].map(v => v + ' <teks>')
