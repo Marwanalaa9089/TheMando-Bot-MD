@@ -285,7 +285,7 @@ const handler = async (m, { command, usedPrefix, conn, args, text }) => {
   }
 };
 
-handler.command = /^(شغل|اغنية|اغنيه|فديو|فيديو|mp3|mp4)$/i;
+handler.command = /^(mp3.1|mp3.3|mp4.3|شغل|mp4.2|mp3.2|mp4.1)$/i;
 export default handler;
 
 async function search(query, options = {}) {
