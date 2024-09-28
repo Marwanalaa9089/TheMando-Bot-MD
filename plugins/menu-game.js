@@ -133,6 +133,6 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 
 handler.help = ['info'];
 handler.tags = ['main'];
-handler.command = ['فعاليات', 'الفعاليات', 'فعالية','الفعالية','الفعاليا','فعليا']
+handler.command = ['فعاليات', 'الفاعليات', 'فعالية','الفعالية','الفعاليا','فعليا']
 
 export default handler;
