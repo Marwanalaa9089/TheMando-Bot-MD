@@ -25,7 +25,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } })
-  const harley = 'https://envs.sh/wHc.jpg'
+  const zack = 'https://envs.sh/SzD.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `˼⚡˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
@@ -44,7 +44,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 ┆📌 ↜الـتـشـغـيـل ↶﹝${uptime}﹞
 ┆🔖 ↜الــمــســتـخـدمـيـن ↶﹝${rtotalreg}﹞
 ╯───────────────────⟢ـ
-> © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "HARLEY",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: harley } }, { upload: conn.waUploadToServer }, {quoted: m}))},
+> © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
                     contextInfo: {
                         mentionedJid: [m.sender],
                         isForwarded: false,
