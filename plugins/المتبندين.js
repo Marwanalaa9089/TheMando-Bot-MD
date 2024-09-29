@@ -19,5 +19,6 @@ handler.help = ['listban']
 handler.tags = ['owner']
 handler.command = ['banlist', 'المبندين'] 
 handler.owner = true;
+handler.premium = true;
 
 export default handler
