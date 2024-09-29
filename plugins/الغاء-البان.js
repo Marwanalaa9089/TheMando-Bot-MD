@@ -16,5 +16,6 @@ handler.help = ['unban @user']
 handler.tags = ['owner']
 handler.command = /^الغاء_البان$/i
 handler.owner = true
+handler.premium = true
 
 export default handler
