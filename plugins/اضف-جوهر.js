@@ -28,6 +28,7 @@ handler.help = ['adddi <@user>']
 handler.tags = ['econ']
 handler.command = ['adddi', 'ضيف_جواهر'] 
 handler.owner = true
+handler.premium = true
 
 export default handler
 
