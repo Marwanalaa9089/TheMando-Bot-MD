@@ -28,7 +28,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   const zack = 'https://envs.sh/SzD.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
-conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `˼⚡˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
+conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `zack`}, body: { text: `˼⚡˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
 > ˼🪪˹↜ مــعــلــومــاتــك ↶
 ╮───────────────────⟢ـ
 ┆⚡↜ بـريـمـيـوم↞⌊ ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''} ⌉
@@ -58,7 +58,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                     sections: [
                                         {
                                             title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام فلاش بـ🤖ـوت',
-                                            highlight_label: 'بعبص براحتك في البوت يا برو 🤖',
+                                            highlight_label: '𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊',
                                             rows: [
                                                 {
                                                     header: 'الــقـ👑ـســم الـاول',
@@ -125,14 +125,14 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                     ]
                                 }),
                   messageParamsJson: ''
-                },
-                {
-              name: "quick_reply",
-              buttonParamsJson: '{"display_text":"⌈✅╎المطورين╎✅⌋","id":".المطور"}'
                      },
                      {
               name: "quick_reply",
-              buttonParamsJson: '{"display_text":"⌈🙌╎الاشتراكات╎🙌⌋","id":".الباقات"}'
+              buttonParamsJson: '{"display_text":"⌈🎗╎فــعــالــيــات╎🎗⌋","id":".الفاعليات"}'
+                     },
+                     {
+              name: "quick_reply",
+              buttonParamsJson: '{"display_text":"⌈🙌╎الاشــتــراكــات╎🙌⌋","id":".الباقات"}'
                      },
                      {
                name: "cta_url",
