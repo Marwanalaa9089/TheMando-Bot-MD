@@ -17,4 +17,5 @@ handler.help = ['blocklist'];
 handler.tags = ['main'];
 handler.command = ['البلوكات', 'المحظورين'];
 handler.owner = true;
+handler.premium = true;
 export default handler;
