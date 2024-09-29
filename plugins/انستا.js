@@ -4,7 +4,7 @@ import instagramGetUrl from 'instagram-url-direct';
 import {instagram} from '@xct007/frieren-scraper';
 import {instagramdl} from '@bochilteam/scraper';
 const handler = async (m, {conn, args, command, usedPrefix}) => {
-if (!args[0]) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsInsta}\n*${usedPrefix + command} https://www.instagram.com/p/CCoI4DQBGVQ/?igshid=YmMyMTA2M2Y=*`
+if (!args[0]) throw `*مثال:*\n\n*${usedPrefix + command} https://www.instagram.com/p/CCoI4DQBGVQ/?igshid=YmMyMTA2M2Y=*`
 const { key } = await conn.sendMessage(m.chat, {text: wait}, {quoted: fkontak});
 // await delay(1000 * 2);
 await conn.sendMessage(m.chat, {text: waitt, edit: key});
@@ -71,7 +71,7 @@ console.log(e)
 }}}}}}}}
 handler.help = ['instagram <link ig>']
 handler.tags = ['downloader']
-handler.command =/^(instagram|ig(dl)?)$/i
+handler.command =/^(انستا|ig(dl)?)$/i
 handler.limit = 2
 handler.register = true
 export default handler
