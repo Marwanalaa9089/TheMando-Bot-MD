@@ -26,12 +26,13 @@ while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 *╰━⊰ ${lenguajeGB.smsAutoLv1()} ⊱━━დ*
 
 *_${lenguajeGB.smsAutoLv6()}_*`, fkontak, {contextInfo: {externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}}) */
-conn.sendButton(m.chat, '🐈 ' + wm, `*╭━⊰ ${username} ⊱━დ*
-*┃ ${lenguajeGB.smsAutoLv2()} ${before}*
-*┃ ${lenguajeGB.smsAutoLv3()} ${user.level}*
-*┃ ${lenguajeGB.smsAutoLv4()}* ${user.role}
-*┃ ${lenguajeGB.smsAutoLv5()} ${new Date().toLocaleString('id-ID')}*
-*╰━⊰ ${lenguajeGB.smsAutoLv1()} ⊱━━დ*
+conn.sendButton(m.chat, '> ' + wm, `${username}
+*╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈•*
+*┊ ${lenguajeGB.smsAutoLv2()} ${before}*
+*┊ ${lenguajeGB.smsAutoLv3()} ${user.level}*
+*┊ ${lenguajeGB.smsAutoLv4()}* ${user.role}
+*┊ ${lenguajeGB.smsAutoLv5()} ${new Date().toLocaleString('id-ID')}*
+*╰┈┈┈┈${lenguajeGB.smsAutoLv1()}┈┈┈┈┈┈•
 
 *_${lenguajeGB.smsAutoLv6()}_*`, null, [[lenguajeGB.smsConMenu(), `.اوامر`]], null, null, fkontak)
 
