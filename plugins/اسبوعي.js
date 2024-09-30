@@ -50,9 +50,9 @@ const recompensas = {
   mythic: premium ? legendarypremium : legendary,
 }
 
-let time = user.lastmonthly + 604800 //432000000 5 dias
-//if (new Date - user.lastmonthly < 432000000) return await conn.reply(m.chat, `𝙔𝘼 𝙍𝙀𝘾𝙄𝘽𝙄𝙎𝙏𝙀 𝙏𝙐 𝙍𝙀𝘾𝙊𝙈𝙋𝙀𝙉𝙎𝘼 𝙈𝙀𝙉𝙎𝙐𝘼𝙇 🌅\n\n𝙔𝙊𝙐 𝘼𝙇𝙍𝙀𝘼𝘿𝙔 𝙍𝙀𝘾𝙀𝙄𝙑𝙀𝘿 𝙔𝙊𝙐𝙍 𝙈𝙊𝙉𝙏𝙃𝙇𝙔 𝙍𝙀𝙒𝘼𝙍𝘿 🌅\n\n𝙑𝙐𝙀𝙇𝙑𝙀 𝙀𝙉 : 𝘾𝙊𝙈𝙀 𝘽𝘼𝘾𝙆 𝙄𝙉\n${clockString(time - new Date() * 1)}`, fkontak,  m)
-await conn.sendButton(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*`, wm + `\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, null, [['لــلاوامـر 🎗', '/اوامر']], fkontak, m)
+let time = user.lastmonthly + 732000000 //432000000 5 dias
+if (new Date - user.lastmonthly < 732000000) return await conn.reply(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, fkontak,  m)
+//await conn.sendButton(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*`, wm + `\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, null, [['لــلاوامـر 🎗', '/اوامر']], fkontak, m)
 let pp = 'https://envs.sh/SKm.jpg'
 let texto = ''
 for (let reward of Object.keys(recompensas)) {
@@ -60,15 +60,17 @@ for (let reward of Object.keys(recompensas)) {
     user[reward] += recompensas[reward]
 texto += `*+${recompensas[reward]}* ${global.rpgshop.emoticon(reward)}\n┆ `}
 let text = `*╮───────────────────⟢ـ*
-┆ 🎖️ ⌊ جـوائـزك الاسـبـوعـيـة!!! ⌉\n
-┆ *${premium ? '🎟️ مـكـافـأة الـمـمـيـزيـن' : '🆓 مـكـافـأة مـجـانـيـة'}*\n
+┆ 🎖️ ⌊ جـوائـزك الاسـبـوعـيـة!!! ⌉
+┊┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈•
+┆ *${premium ? '🎟️ مـكـافـأة الـمـمـيـزيـن' : '🆓 مـكـافـأة مـجـانـيـة'}*
+┊┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈•
 ┆ ${texto}
 ╯───────────────────⟢ـ\n\n🎟️ بــريــمــيــام ⇢ ${premium ? '✅' : '❌'}\n${wm}`
 conn.sendMessage(m.chat, {image: {url: pp}, caption: text, mentions: conn.parseMention(text)}, {quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
  //await conn.sendButton(m.chat, text, texto + `\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`, gata.getRandom(), [['⚗️ 𝙍𝙀𝘾𝙇𝘼𝙈𝘼𝙍 𝘾𝙊𝙁𝙍𝙀 ⚗️', '/cofre'], ['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']], m, enlace)  
 user.lastmonthly = new Date * 1
 }
-handler.command = ['اسبوع', 'اسبوعي', 'mes', 'سبوعي', 'entregadelmes'] 
+handler.command = ['اسبوعي', 'اسبوع', 'اس', 'سبوعي', 'entregadelmes'] 
 handler.level = 0
 export default handler
 
