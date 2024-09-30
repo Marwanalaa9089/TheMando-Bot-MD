@@ -50,8 +50,8 @@ const recompensas = {
   mythic: premium ? legendarypremium : legendary,
 }
 
-let time = user.lastmonthly + 732000000 //432000000 5 dias
-if (new Date - user.lastmonthly < 732000000) return await conn.reply(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, fkontak,  m)
+let time = user.lastmonthly + 730000000 //432000000 5 dias
+if (new Date - user.lastmonthly < 730000000) return await conn.reply(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, fkontak,  m)
 //await conn.sendButton(m.chat, `*مرحبا لقد اخذت جوائزك الاسبوعية بل الفعل 🙌*`, wm + `\n\n*حاول مجددا بعد 👇🏻:*\n\n${clockString(time - new Date() * 1)}`, null, [['لــلاوامـر 🎗', '/اوامر']], fkontak, m)
 let pp = 'https://envs.sh/SKm.jpg'
 let texto = ''
