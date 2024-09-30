@@ -32,7 +32,7 @@ conn.sendButton(m.chat, '> ' + wm, `${username}
 *┊ ${lenguajeGB.smsAutoLv3()} ${user.level}*
 *┊ ${lenguajeGB.smsAutoLv4()}* ${user.role}
 *┊ ${lenguajeGB.smsAutoLv5()} ${new Date().toLocaleString('id-ID')}*
-*╰┈┈┈┈${lenguajeGB.smsAutoLv1()}┈┈┈┈┈┈•
+*╰┈┈${lenguajeGB.smsAutoLv1()}┈┈•*
 
 *_${lenguajeGB.smsAutoLv6()}_*`, null, [[lenguajeGB.smsConMenu(), `.اوامر`]], null, null, fkontak)
 
