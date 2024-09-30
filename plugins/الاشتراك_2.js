@@ -62,6 +62,6 @@ const handler = async (m, { conn }) => {
 
 handler.help = ['info'];
 handler.tags = ['main'];
-handler.command = ['اسبوعي', 'ش2', 'اشتراك_اسبوعي', 'بمقابل'];
+handler.command = ['ش_اسبوعي', 'ش2', 'اشتراك_اسبوعي', 'بمقابل'];
 
 export default handler;
