@@ -4,13 +4,13 @@ const { prepareWAMessageMedia } = pkg;
 const handler = async (m, { conn }) => {
     await conn.sendMessage(m.chat, { react: { text: '🚀', key: m.key } });
 
-    const harley = 'https://envs.sh/06H.jpg';
+    const Zack = 'https://envs.sh/06H.jpg';
 
     let messageContent = {
         viewOnceMessage: {
             message: {
                 interactiveMessage: {
-                    header: { title: 'HARLEY' },
+                    header: { title: 'Zack' },
                     body: {
                         text: `━ ╼╃ ⌬〔﷽〕⌬ ╄╾ ━
 > 𝐅𝐋𝐀𝐒𝐇﹝⚡️﹞𝐁𝐎𝐓
@@ -19,9 +19,7 @@ const handler = async (m, { conn }) => {
             *فلاش بــ🤖ــوت*
 *⋅ ───━ •﹝👑﹞• ━─── ⋅*
 ╗───¤﹝السعر ↶ 💵﹞
-> •┊˹👾˼┊- رقم وهمي اسبوعيا
-> •┊˹👾˼┊- روبل بوت ارقام
-> •┊˹👾˼┊- 500 نقطة دعمكم
+> •┊˹👾˼┊- رقمين وهمي
 ╝───────────────¤
 ╗───¤﹝المميزات ↶ 🚀﹞
 > •┊˹👾˼┊- اشتراك سرفر عام
@@ -36,11 +34,11 @@ const handler = async (m, { conn }) => {
 > 〔تـوقـيـع┊ ˼‏📜˹ 〕↶
 ⌠𝐅𝐋𝐀𝐒𝐇﹝⚡️﹞𝐁𝐎𝐓⌡
 *⋅ ───━ •﹝👑﹞• ━─── ⋅*`,
-                        subtitle: "HARLEY"
+                        subtitle: "Zack"
                     },
                     header: {
                         hasMediaAttachment: true,
-                        ...(await prepareWAMessageMedia({ image: { url: harley } }, { upload: conn.waUploadToServer }, { quoted: m }))
+                        ...(await prepareWAMessageMedia({ image: { url: Zack } }, { upload: conn.waUploadToServer }, { quoted: m }))
                     },
                     nativeFlowMessage: {
                         buttons: [
