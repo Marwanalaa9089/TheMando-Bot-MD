@@ -12,13 +12,14 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let d = new Date(new Date + 3600000);
     let locale = 'ar';
     let week = d.toLocaleDateString(locale, { weekday: 'long' });
+    let time = d.toLocaleDateString(locale, { time: 'long' });
     let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
     let _uptime = process.uptime() * 1000;
     let uptime = clockString(_uptime);
     let user = global.db.data.users[m.sender];
     let name = conn.getName(m.sender)
     let { money, joincount } = global.db.data.users[m.sender];
-    let { exp, limit, level, role } = global.db.data.users[m.sender];
+    let { exp, limit, level, role, health, crystal, upgrader, wood } = global.db.data.users[m.sender];
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length;
     let more = String.fromCharCode(8206);
     let readMore = more.repeat(850);
@@ -36,12 +37,18 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 ┆💫↜ رتـبـتـك↞⌊ ${role} ⌉
 ┆💷↜ فــلــوســك↞⌊ ${exp} ⌉
 ┆💎↜ الـمـاس↞⌊ ${limit} ⌉
+┆❤↜ الــصــحــة↞⌊ ${health} ⌉
+┆🔮↜ الــكــريــســتــال↞⌊ ${crystal} ⌉
+┆🧰↜ الــخــبــرة↞⌊ ${upgrader} ⌉
+┆🪵↜ الــخــشــب↞⌊ ${wood} ⌉
 ╯───────────────────⟢ـ
 > ˼🤖˹↜ الــبــوت↶
 ╮───────────────────⟢ـ
 ┆⚙️ ↜اسـم الـبـوت↶﹝𝐅𝐋𝐀𝐒𝐇﹞
 ┆🪄 ↜الـمـطـور ↶﹝𝐓𝐄𝐀𝐌﹞
 ┆📌 ↜الـتـشـغـيـل ↶﹝${uptime}﹞
+┆🎪 ↜الــيــوم ↶﹝${week}﹞
+┆⌚ ↜الـتـاريـخ ↶﹝${time}﹞
 ┆🔖 ↜الــمــســتـخـدمـيـن ↶﹝${rtotalreg}﹞
 ╯───────────────────⟢ـ
 > © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
