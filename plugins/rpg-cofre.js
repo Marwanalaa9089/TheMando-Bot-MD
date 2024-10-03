@@ -1,6 +1,6 @@
 const handler = async (m, {isPrems, conn}) => {
   const time = global.db.data.users[m.sender].lastcofre + 86400000; // 36000000 10 Horas //86400000 24 Horas
-  if (new Date - global.db.data.users[m.sender].lastcofre < 86400000) throw `[❗𝐈𝐍𝐅𝐎❗] لقد تسوقت  بالفعل\nيرجع بعد *${msToTime(time - new Date())}* للمطالبة مرة أخرى`;
+  if (new Date - global.db.data.users[m.sender].lastcofre < 86400000) throw `[❗𝐈𝐍𝐅𝐎❗] لقد تسوقت  بالفعل\nارجع بعد *${msToTime(time - new Date())}* للمطالبة مرة أخرى`;
 
   const img = 'https://img.freepik.com/vector-gratis/cofre-monedas-oro-piedras-preciosas-cristales-trofeo_107791-7769.jpg?w=2000';
   const dia = Math.floor(Math.random() * 30);
@@ -17,10 +17,8 @@ const handler = async (m, {isPrems, conn}) => {
 ╔══🎉═🎉═🎉══⬣
 ║🛒 يحصل علي من التسوق
 ║┈┈┈┈┈┈┈┈┈┈┈┈┈
-║➢ *${dia} الماسه* 💎
-║➢ *${tok} توكين* 🪙
-║➢ *${mystic} عملات,* 👾
-║➢ *${expp} ] دولار* ⚡
+║➢ *${limit} ذهب* 🪙
+║➢ *${expp} دولار* 💷
 ╚═════════════════⬣`;
 
   const fkontak = {
@@ -38,8 +36,8 @@ const handler = async (m, {isPrems, conn}) => {
     'participant': '0@s.whatsapp.net',
   };
 
-  await conn.sendFile(m.chat, img, 'mystic.jpg', texto, fkontak);
-  // await conn.sendButton(m.chat, texto, wm, img, [['🔰 𝙼𝙴𝙽𝚄', '/menu'] ], fkontak, m)
+  //await conn.sendFile(m.chat, img, 'mystic.jpg', texto, fkontak);
+  await conn.sendButton(m.chat, texto, wm, img, [['𝙼𝙴𝙽𝚄 🤖', '/menu'] ], fkontak, m)
   global.db.data.users[m.sender].lastcofre = new Date * 1;
 };
 handler.help = ['daily'];
