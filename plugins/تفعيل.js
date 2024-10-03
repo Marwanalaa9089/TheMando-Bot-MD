@@ -5,7 +5,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   const name2 = conn.getName(m.sender);
   const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => global.imagen1);
   if (user.registered === true) throw `مثل\nتفعيل زاك.17.`;
-  if (!Reg.test(text)) throw `*[❗مساعده❗] انت مش مسجل عليك التسجيل اولا*\n\n*—◉ مثل: ${usedPrefix + command} الاسم.العمر*\n*—◉ مثل: ${usedPrefix + command} فينوم.18*`;
+  if (!Reg.test(text)) throw `*[❗مساعده❗] انت مش مسجل عليك التسجيل اولا*\n\n*—◉ مثل: ${usedPrefix + command} الاسم.العمر*\n*—◉ مثل: ${usedPrefix + command} زاك.17*`;
   let [_, name, splitter, age] = text.match(Reg);
   if (!name) throw '*مثل .تفعيل ناروتو.18*';
   if (!age) throw '*[❗𝐈𝐍𝐅𝐎❗] 𝙻𝙰 𝙴𝙳𝙰𝙳 𝙽𝙾 𝙿𝚄𝙴𝙳𝙴 𝙴𝚂𝚃𝙰𝚁 𝚅𝙰𝙲𝙸𝙰*';
