@@ -25,6 +25,8 @@ const handler = async (m, { conn }) => {
 ┆˼🎪˹┆⌊خط⌉
 ┆˼🎪˹┆⌊توب⌉
 ┆˼🎪˹┆⌊ترتيب⌉
+┆˼🎪˹┆⌊يومي⌉
+┆˼🎪˹┆⌊اسبوعي⌉
 ╯───────────────────⟢ـ
 > © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,
                         subtitle: "zack"
