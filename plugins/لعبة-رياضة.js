@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 let timeout = 60000;
-let poin = 500;
+let poin = 7000;
 
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tekateki = conn.tekateki ? conn.tekateki : {};
@@ -15,11 +15,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     let _clue = json.response;
     let clue = _clue.replace(/[A-Za-z]/g, ''); // Fixed this line
     let caption = `
-ⷮ ${json.question}
-
-❐↞┇الـوقـت⏳↞ ${(timeout / 1000).toFixed(2)}┇
-❐↞┇الـجـائـزة💵↞ ${poin} دولار┇
-*『𝐅𝐋𝐀𝐒𝐇﹝⚡﹞𝐁𝐎𝐓』*
+ⷮ > ˼⚡˹↜ الــســؤال يــا روحــي↶
+> الــســؤال↜ ˼${json.question}˹ 
+╮───────────────────⟢ـ
+┆˼⏳˹┇الـوقـت↞ ⌊${(timeout / 1000).toFixed(2)} ثانية⌉
+┆˼💷˹┇الـجـائـزة↞ ⌊${poin} دولار⌉
+┆˼🤖˹┇المطور ↞ ⌊نــاروتـو - زاك⌉
+╯───────────────────⟢ـ
+> فلاش بــوت
 `.trim();
     conn.tekateki[id] = [
        await conn.reply(m.chat, caption, m),
