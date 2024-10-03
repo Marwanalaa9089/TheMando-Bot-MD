@@ -6,7 +6,7 @@ let gameCache = null;
 
 let totalPoints = 1000000;
 let questionsCount = 10;
-let poin = 5000;
+let poin = 7000;
 let timeout = 60000;
 const threshold = 0.72;
 
