@@ -1,6 +1,6 @@
 import fs from 'fs';
 const timeout = 60000;
-const poin = 500;
+const poin = 7000;
 const handler = async (m, {conn, usedPrefix}) => {
   conn.tekateki = conn.tekateki ? conn.tekateki : {};
   const id = m.chat;
@@ -16,9 +16,9 @@ const handler = async (m, {conn, usedPrefix}) => {
 ⷮ > ˼⚡˹↜ الــســؤال يــا روحــي↶
 > الــســؤال↜ ˼${json.question}˹ 
 ╮───────────────────⟢ـ
-┆❐↞┇الـوقـت⏳↞ ⌊${(timeout / 1000).toFixed(2)} ثانية⌉
-┆❐↞┇الـجـائـزة💰↞ ⌊${poin} دولار⌉
-┆❐↞┇المطور 🤖↞ ⌊نــاروتـو - عــراب زاك⌉
+┆˼⏳˹┇الـوقـت↞ ⌊${(timeout / 1000).toFixed(2)} ثانية⌉
+┆˼💷˹┇الـجـائـزة↞ ⌊${poin} دولار⌉
+┆˼🤖˹┇المطور ↞ ⌊نــاروتـو - زاك⌉
 ╯───────────────────⟢ـ
 > فلاش بــوت
 `.trim();
