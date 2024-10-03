@@ -38,7 +38,7 @@ let handler = async function (_0x2937c8, {
         });
         _0x2937c8.reply("┇عـــدد الألــقـــاب الــمـــســـجـــلــــة⌫: " + _0x44f6aa.length + "\n\n *┇الألـــقــــاب الـــمـــســـجـــلـــة:*\n\n" + _0x571f14);
       }
-    } else if (_0x1ac1d4 === "تسجيل") {
+    } else if (_0x1ac1d4 === "سجل") {
       if (!_0x2937c8.isGroup) {
         _0x2937c8.reply("*〔هــذا الأمــر يــعــمــل فــقــط فـي الــمــجــمــوعــات⌫〕*");
         return;
@@ -48,14 +48,14 @@ let handler = async function (_0x2937c8, {
         return;
       }
       if (!_0x2937c8.mentionedJid || !_0x42cb88 || _0x42cb88.trim() === "") {
-        _0x2937c8.reply("*مثال:*\n .*تــســجــيــل @الــعــضــو لايــــت*");
+        _0x2937c8.reply("*مثال:*\n .*ســجـــل @الــعــضــو لايــــت*");
         return;
       }
       const _0x29b1fb = _0x2937c8.mentionedJid[0].replace("@s.whatsapp.net", "");
       const _0xd54b9e = _0x42cb88.trim().split(" ").slice(1).filter(_0x413500 => _0x413500.trim() !== "");
       const _0x4d48ec = _0xd54b9e.join(" ");
       if (!/\S/.test(_0x4d48ec)) {
-        _0x2937c8.reply("*مثال:*\n .*تــســجــيــل @الــعــضــو لايــــت*");
+        _0x2937c8.reply("*مثال:*\n .*ســجـــل @الــعــضــو لايــــت*");
         return;
       }
       const _0x53f1f3 = await BK9.findOne({
@@ -152,6 +152,6 @@ let handler = async function (_0x2937c8, {
     console.error("خــطــأ", _0x2dd35e);
   }
 };
-handler.command = ["الالقاب", "تسجيل", "لقبي", "لقبه", "حذف_لقب", "لقب"];
+handler.command = ["الالقاب", "سجل", "لقبي", "لقبه", "حذف_لقب", "لقب"];
 handler.tags = ["BK9"];
 export default handler;
