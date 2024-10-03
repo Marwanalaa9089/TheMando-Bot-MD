@@ -2,17 +2,17 @@ const handler = async (m, {conn, isPrems}) => {
   let enviando;
   if (enviando) return
   enviando = true
-  const hasil = Math.floor(Math.random() * 5000);
+  const limit = Math.floor(Math.random() * 5000);
   const time = global.db.data.users[m.sender].lastwork + 600000;
   if (new Date - global.db.data.users[m.sender].lastwork < 600000) throw `⚔️ *¡انتظر لحظة أيها المغامر الصغير!* ⚔️\n\n*—◉ العودة إلى الرحلة في ${msToTime(time - new Date())} ⏳*`;
-  conn.sendMessage(m.chat, {text: `🏞️ *أنت تشرع في رحلة مثيرة aventura:*\n\n🛠️ *${pickRandom(global.work)}*\n\n*¡فاز ${hasil} إكسب لشجاعتك!*`}, {quoted: m});
-  global.db.data.users[m.sender].doller += hasil;
+  conn.sendMessage(m.chat, {text: `🏞️ *أنت تشرع في رحلة مثيرة aventura:*\n\n🛠️ *${pickRandom(global.work)}*\n\n*¡فاز ${limit} ذهب إكسب لشاجعتك!*`}, {quoted: m});
+  global.db.data.users[m.sender].limit += limit;
   global.db.data.users[m.sender].lastwork = new Date() * 1;
   enviando = false
 };
 handler.help = ['work'];
 handler.tags = ['xp'];
-handler.command = /^(work|عمل|chambear)$/i
+handler.command = /^(work|مغامرة|chambear)$/i
 handler.fail = null;
 export default handler;
 
