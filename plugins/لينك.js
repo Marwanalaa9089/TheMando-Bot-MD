@@ -5,7 +5,7 @@ const handler = async (m, {conn, args}) => {
     contextInfo: {externalAdReply: {mediaUrl: null, mediaType: 1, description: null,
       title: 'لينك الجروب',
       body: '𝐅𝐋𝐀𝐒𝐇﹝⚡﹞𝐁𝐎𝐓',
-      previewType: 0, thumbnail: fs.readFileSync('./Menu.png'),
+      previewType: 0, thumbnail: fs.readFileSync('./Menu2.jpg'),
       sourceUrl: `https://whatsapp.com/channel/0029ValRCUIFi8xmK9xBOr0I`}}});
 };
 handler.help = ['linkgroup'];
