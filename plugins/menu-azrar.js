@@ -26,7 +26,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } })
-  const zack = 'https://envs.sh/BiR.mp4'
+  const zack = 'https://envs.sh/BiB.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `zack`}, body: { text: `˼🦇˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
@@ -41,7 +41,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 ┘┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⟤ـ
 > ˼🤖˹↜ الــبــوت↶
 ┐┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟤ـ
-┊⚙️ ↜اسـم الـبـوت↶﹝𝐅𝐋𝐀𝐒𝐇﹞
+┊⚙️ ↜اسـم الـبـوت↶﹝𝐑𝐀𝐈𝐙𝐄𝐋﹞
 ┊📌 ↜الـتـشـغـيـل ↶﹝${uptime}﹞
 ┊🎪 ↜الــيــوم ↶﹝${week}﹞
 ┊⌚ ↜الـتـاريـخ ↶﹝${time}﹞
@@ -60,7 +60,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                     title: '⌈🛡╎الــقــوائـــم╎🛡⌋',
                                     sections: [
                                         {
-                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام فلاش بـ🤖ـوت',
+                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام رايــزل بـ🤖ـوت',
                                             highlight_label: '𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊',
                                             rows: [
                                                 {
@@ -82,7 +82,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                                     id: '.ق2'
                                                 },
                                                 {
-                                                    header: 'الــقـ👑ـســم الــرابــع',
+                                                    header: 'الــقـ🦇ـســم الــرابــع',
                                                     title: 'استدعاء_قسم_المطور #المطور',
                                                     description: '',
                                                     id: '.ق3'
