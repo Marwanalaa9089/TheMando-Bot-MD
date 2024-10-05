@@ -128,7 +128,7 @@ global.desc2 = '' // Add long description (90 caractres max) (Este parámetro se
 global.country = '' // Add country, example: 🇪🇨
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
-global.packname = `𝐅𝐋𝐀𝐒𝐇﹝⚡️﹞𝐁𝐎𝐓` //"𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 🐈"
+global.packname = `𝐑𝐀𝐈𝐙𝐄𝐋﹝🦇﹞𝐁𝐎𝐓` //"𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 🐈"
 global.author = `Naruto & Zack` //"𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨"
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
@@ -165,7 +165,7 @@ global.eg = '╰⊱💚⊱ *𝙀́𝙓𝙄𝙏𝙊 | 𝙎𝙐𝘾𝘾𝙀𝙎�
 global.exito = eg
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
-global.wm = "𝐅𝐋𝐀𝐒𝐇﹝⚡️﹞𝐁𝐎𝐓"
+global.wm = "𝐑𝐀𝐈𝐙𝐄𝐋﹝🦇﹞𝐁𝐎𝐓"
 global.igfg = "Naruto & Zack"
 global.nomorown = "972546887176"
 global.pdoc = ["application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/msword", "application/pdf", "text/rtf"]
