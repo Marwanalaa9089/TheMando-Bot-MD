@@ -8,7 +8,7 @@ const handler = async (m, {isPrems, conn}) => {
   const mystic = Math.floor(Math.random() * 4000);
   const expp = Math.floor(Math.random() * 5000);
 
-  global.db.data.users[m.sender].limit += dia;
+  global.db.data.users[m.sender].gold += dia;
   global.db.data.users[m.sender].money += mystic;
   global.db.data.users[m.sender].joincount += tok;
   global.db.data.users[m.sender].exp += expp;
@@ -17,7 +17,7 @@ const handler = async (m, {isPrems, conn}) => {
 ╔══🎉═🎉═🎉══⬣
 ║🛒 يحصل علي من التسوق
 ║┈┈┈┈┈┈┈┈┈┈┈┈┈
-║➢ *${limit} ذهب* 🪙
+║➢ *${dia} ذهب* 🪙
 ║➢ *${expp} دولار* 💷
 ╚═════════════════⬣`;
 
