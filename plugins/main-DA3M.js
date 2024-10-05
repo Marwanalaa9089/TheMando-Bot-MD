@@ -10,11 +10,8 @@ https://github.com/araab-zack
 ▢ *Account Naruto*
 https://github.com/naru12348
 ─────────────
-▢ *SUPPORT_GROUP_(AR🇸🇦)*
+▢ *SUPPORT_GROUP*
 https://chat.whatsapp.com/I16t9p7rBz4KiLww5RI7Io
-─────────────
-▢ *SUPPORT_GROUP_(ES🇪🇸)*
-https://chat.whatsapp.com/B9Ovn2IghiFJCoSnWEgsRn
 ─────────────
 ▢ *YouTube*
 • https://www.youtube.com/@Zack_247
