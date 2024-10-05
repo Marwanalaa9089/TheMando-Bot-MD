@@ -8,5 +8,5 @@ let handler = async (m, { conn, text }) => {
   }
   handler.help = ['ytcomment <comment>']
   handler.tags = ['maker'] 
-  handler.command = /^(كومنت)$/i
+  handler.command = /^(تعليق)$/i
   export default handler
