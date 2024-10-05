@@ -12,11 +12,11 @@ let handler = async (m, {conn, usedPrefix}) => {
 ╯───────────────────⟢ـ
 
 *ملحوظه :* 
-*يمكنك بيع الماس مقابل دولارات*
-❏ *${usedPrefix}بيع-جواهر*`, m, { mentions: [who] })
+*يمكنك شراء الماس مقابل دولارات*
+❏ *${usedPrefix}شراء-الماس*`, m, { mentions: [who] })
 }
 handler.help = ['balance']
 handler.tags = ['econ']
-handler.command = ['شراء-الماس', 'الماسي', 'diamond', 'الماس'] 
+handler.command = ['الماس', 'جواهري', 'diamond', 'الماس'] 
 
 export default handler
