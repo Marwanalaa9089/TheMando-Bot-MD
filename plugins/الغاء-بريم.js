@@ -12,7 +12,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
 
   user.premium = false;
 
-  const textdelprem = `*[❗] @${who.split`@`[0]} حصل مسكبه في إزالة البريم*`;
+  const textdelprem = `*[❗] @${who.split`@`[0]} لم تعد بريم بعد الان يا*`;
   m.reply(textdelprem, null, {mentions: conn.parseMention(textdelprem)});
 };
 handler.help = ['delprem <@user>'];
