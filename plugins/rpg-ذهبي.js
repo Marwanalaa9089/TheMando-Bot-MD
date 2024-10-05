@@ -6,7 +6,7 @@ const handler = async (m, {usedPrefix}) => {
   m.reply(`ذهــبـي ↶
 ╮───────────────────⟢ـ
 ┆🪪↜ الاسـم : ${name}
-┆🪙↜ الــذهــب : ${global.db.data.users[who].limit}
+┆🪙↜ الــذهــب : ${global.db.data.users[who].gold}
 ╯───────────────────⟢ـ
 > فــلاش بــوت`);
 };
