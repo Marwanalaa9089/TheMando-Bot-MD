@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
     let topTrending = json.slice(0, 8);
 
-    let message = '🔥 **اتفضل يا عمو زاك الهنتاي بتاعك واتمتع** 🔥\n\n';
+    let message = '🔥 *اتفضل يا عمو زاك الهنتاي بتاعك واتمتع* 🔥\n\n';
 
     topTrending.forEach((data, index) => {
       message += `
