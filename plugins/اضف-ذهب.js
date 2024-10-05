@@ -9,11 +9,11 @@ let handler = async (m, { conn, text }) => {
     if (!txt) throw '✳️ أدخل المبلغ *الحد* الذي تريد إضافته'
     if (isNaN(txt)) throw '🔢 مجرد ارقام'
     let dmt = parseInt(txt)
-    let limit = dmt
+    let gold = dmt
 
     if (limit < 1) throw '✳️ الحد الأدنى  *1*'
     let users = global.db.data.users
-   users[who].limit += dmt
+   users[who].gold += dmt
 
     await m.reply(`
 *⌊ اضــافــه ذهــــب ⌉* ↶
