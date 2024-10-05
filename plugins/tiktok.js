@@ -1,62 +1,60 @@
-import fg from 'api-dylux' 
-import axios from 'axios'
-import cheerio from 'cheerio'
-import { tiktok } from "@xct007/frieren-scraper";
-let generateWAMessageFromContent = (await import(global.baileys)).default
-import { tiktokdl } from '@bochilteam/scraper'
-let handler = async (m, { conn, text, args, usedPrefix, command}) => {
-if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsTikTok2}\n*${usedPrefix + command} https://vm.tiktok.com/ZM6n8r8Dk/*`, fkontak,  m)
-if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}${mid.smsTikTok3}`, fkontak,  m)  
-await conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}${mid.smsTikTok4}`, fkontak,  m) 
-try {
-const dataF = await tiktok.v1(args[0])
-conn.sendFile(m.chat, dataF.play, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
-} catch (e1) {
-try {
-const tTiktok = await tiktokdlF(args[0])
-conn.sendFile(m.chat, tTiktok.video, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
-} catch (e2) {
-try {
-let p = await fg.tiktok(args[0]) 
-conn.sendFile(m.chat, p.nowm, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m)
-} catch (e3) {
-try { 
-const { author: { nickname }, video, description } = await tiktokdl(args[0])
-const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
-conn.sendFile(m.chat, url, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim(), m)
-handler.limit = 2
-} catch (e4) {
-try{
-const response=await fetch(`https://deliriusapi-official.vercel.app/download/tiktok?url=${args[0]}`)
-const dataR = await response.json()
-const { author,title, meta} = dataR.data
-conn.sendFile(m.chat, meta.media[0].org, 'tiktok.mp4', `⛱️ ${mid.user}\n*${author.nickname}*\n${wm}`.trim(), m) 
-}
-catch (e5){
-try{
-const response=await fetch(`https://deliriusapi-official.vercel.app/download/tiktok?&query=${text}`)
-const dataR = await response.json()
-conn.sendFile(m.chat,dataR.result.link, 'tiktok.mp4', `⛱️ ${mid.user}\n*${dataR.result.author.username}*\n${wm}`.trim(), m)
-} catch (e) {
-await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
-console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
-console.log(e)
-handler.limit = false
-}}}}}}}
-handler.help = ['tiktok']
-handler.tags = ['dl']
-handler.command = /^(tt|tiktok)(dl|nowm)?$/i
-//handler.limit = 2
-export default handler
+import fetch from 'node-fetch';
+import fs from 'fs';
+//https://click.discord.com/ls/click?upn=u001.a0NJ38DJJG1sulNx5wS1jjC3-2FytEgbSbq-2FUmpxbpkbg14puiUN75BQU-2BrfLFYuAWB8X0py2eeyVjD738fhGFSHhMPsyUEndqfLtACp5zPj0vjfPcC3G1jvcquDbkdstS32dz0bJWFvPTn-2FAvvLDKrUh4375A2uVOxB3xHdhpQbBwa5xZJf7eh5qhKyEnKDgBZhxI-2Fq8qLS5rANb-2FtP7b3Os-2F6-2Be1A94HCOHNI2RW2Y8-3DKUc9_DC2mLSuw-2BGdNjXXJGz6qZODze6aow2jS5IQbAEd5B73UhzNnCbqQjZYc5L1oKFymwYEyFg7EUZgkaVJLvncwl2WfOkU9OPIE7GlwI-2BUrQU-2BCR5MgQbBguStFwIUSk7csKPgJtfvep7w1A7KqmuKkGBBHbbO-2BMnvC1G-2BZgdoNf8xVorMUcTaaPNZHmHaDMc-2FTRT8AgRtHFa51s0Nlc-2FPo1rprsm-2BMPT5SWShHcunMeRZaSz-2F5oUXER65qIVKbzfi6dAr4ywQ0NPs-2B9qe8ckmH1Q-3D-3D
+let handler = async (m, { conn, usedPrefix, args, command, text }) => {
+  if (!text) throw `يرجى استخدام الأمر مع رابط فيديو من تيكتوك\nمثال: ${usedPrefix + command} https://vt.tiktok.com/ZS2CQ96qp/`;
+  m.react('⏳');
 
-async function tiktokdlF(url) {
-if (!/tiktok/.test(url)) return 'Enlace incorrecto';
-const gettoken = await axios.get("https://tikdown.org/id");
-const $ = cheerio.load(gettoken.data);
-const token = $("#download-form > input[type=hidden]:nth-child(2)").attr( "value" );
-const param = { url: url, _token: token };
-const { data } = await axios.request("https://tikdown.org/getAjax?", { method: "post", data: new URLSearchParams(Object.entries(param)), headers: { "content-type": "application/x-www-form-urlencoded; charset=UTF-8", "user-agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" }, });
-var getdata = cheerio.load(data.html);
-if (data.status) {
-return { status: true, thumbnail: getdata("img").attr("src"), video: getdata("div.download-links > div:nth-child(1) > a").attr("href"), audio: getdata("div.download-links > div:nth-child(2) > a").attr("href"), }} else
-return { status: false }}
+  try {
+    let mediaURL = await zoro(text);
+
+    if (!mediaURL) throw new Error('لم يتم العثور على رابط تحميل الفيديو');
+
+    await conn.sendFile(m.chat, mediaURL, '', 'تم تحميل الفيديو بنجاح', m, false, { mimetype: 'video/mp4' });
+  } catch (error) {
+    console.error('تفاصيل الخطأ:', error);
+    throw `حدث خطأ ما في تحميل الفيديو: ${error.message}`;
+  }
+};
+
+async function zoro(text) {
+  try {
+    let res = await fetch(`https://artst-three.vercel.app/download?link=${encodeURIComponent(text)}`);
+    
+    if (!res.ok) {
+      let errorText = await res.text();
+      throw new Error('الـ API لم يعيد استجابة صحيحة');
+    }
+
+    let json = await res.json();
+
+    if (!json.link) throw new Error('لم يتم العثور على رابط الفيديو');
+
+    const fileName = 'Instagram_video.mp4';
+    const fileStream = fs.createWriteStream(fileName);
+
+    let videoRes = await fetch(json.link);
+    if (!videoRes.ok) {
+      let videoErrorText = await videoRes.text();
+      throw new Error('فشل في تنزيل الفيديو');
+    }
+
+    videoRes.body.pipe(fileStream);
+
+    await new Promise((resolve, reject) => {
+      fileStream.on('finish', resolve);
+      fileStream.on('error', reject);
+    });
+
+    return fileName;
+  } catch (error) {
+    console.error('تفاصيل الخطأ:', error);
+    return false;
+  }
+}
+
+handler.help = ['instagramdl'];
+handler.tags = ['downloader'];
+handler.command = /^(تيك|تيكتوك|tiktok)$/i;
+
+export default handler;
