@@ -133,10 +133,8 @@ await conn.sendMessage(m.chat, { react: { text: '😂', key: m.key } })
     conn.reply(m.chat, `*الحمد لله و انت 🐧؟*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 } 
 
- if (/^تتجوزيني|تتجوزيني؟$/i.test(m.text) ) { //sem prefixo 
+ if (/^تتجوزني|تتجوزني؟$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `*بــس يــعــم بــتــكــســف 😭💔*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
- 
- }
   
  } 
  return !0 } 
