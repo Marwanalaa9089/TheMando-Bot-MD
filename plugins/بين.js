@@ -1,112 +1,121 @@
-/*import fetch from "node-fetch"
+import axios from 'axios';
+const {
+  generateWAMessageContent,
+  generateWAMessageFromContent,
+  proto
+} = (await import("@whiskeysockets/baileys")).default;
 
-let handler = async (m, { conn, usedPrefix, command, text }) => {
-let query = text.trim()
-
-  const sections = [{
-    title: `${htki} LISTA ${htka}`,
-    rows: [{
-      header: 'wwww',
-      title: "ADMFJ",
-      description: 'yyyyyyy',
-      id: ".MENU"
-    }, {
-      title: "ADJNF",
-      id: ".MENU"
-    }, {
-      title: "DNFKV",
-      id: ".MENU" 
-    }, {
-      title: "DHJNS",
-      id: ".MENU"
-    }, ]
-  }, ]  
-
-const listMessage = {
-text: 'Texto',
-footer: '┏- - - - -  INFO - - - - -\n┊ 🅟 = Premium\n┊ Ⓕ = Free\n┗•',
-title: `❏––––[ *TEX* ]–––`,
-buttonText: "- -- -",
-sections
+let handler = async (message, { conn, text, usedPrefix, command }) => {
+  if (!text) {
+    return conn.reply(message.chat, "[❗] *فين النص اللي هتبحث عنو ي حوب*", message);
   }
 
-async function getPinterestImages(query) {
-let response = await fetch(`https://aemt.me/pinterest?query=${encodeURIComponent(query)}`)
-let data = await response.json()
-return data.result
+  try {
+    // استدعاء واجهة Pinterest API
+    let { data } = await axios.get(`https://www.pinterest.com/resource/BaseSearchResource/get/?source_url=%2Fsearch%2Fpins%2F%3Fq%3D${encodeURIComponent(text)}&data=%7B%22options%22%3A%7B%22isPrefetch%22%3Afalse%2C%22query%22%3A%22${encodeURIComponent(text)}%22%2C%22scope%22%3A%22pins%22%2C%22no_fetch_context_on_resource%22%3Afalse%7D%2C%22context%22%3A%7B%7D%7D&_=1619980301559`);
+
+    // استخراج روابط الصور
+    let imageUrls = data.resource_response.data.results.map(result => result.images.orig.url);
+    shuffleArray(imageUrls);
+
+    // اختيار أول 10 صور فقط
+    let selectedImages = imageUrls.slice(0, 10);
+
+    let results = [];
+    for (let i = 0; i < selectedImages.length; i++) {
+      let imageUrl = selectedImages[i];
+      let imageMessage = await generateImageMessage(imageUrl);
+
+      results.push({
+        body: proto.Message.InteractiveMessage.Body.fromObject({
+          text: `النتيجة : ${i + 1}`
+        }),
+        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+          text: "By:Zack & Sar"
+        }),
+        header: proto.Message.InteractiveMessage.Header.fromObject({
+          title: '',
+          hasMediaAttachment: true,
+          imageMessage
+        }),
+        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+          buttons: [
+          {
+                                name: "cta_url",
+                                buttonParamsJson: JSON.stringify({
+                                    display_text: "الـدعـم",                   
+                                    url: "https://chat.whatsapp.com/FZrtNMezysq24t3GPt6oxE",
+                                    merchant_url: "https://chat.whatsapp.com/FZrtNMezysq24t3GPt6oxE"
+                                })
+                            }, 
+                      {
+                                name: "cta_url",
+                                buttonParamsJson: JSON.stringify({
+                                    display_text: "قـنـاتـي",                   
+                                    url: "https://whatsapp.com/channel/0029VaSQX1TI1rcbxtQZ5518",
+                                    merchant_url: "https://whatsapp.com/channel/0029VaSQX1TI1rcbxtQZ5518"
+                                })
+                            }, 
+            {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "البحث مجددا",
+                id: `${usedPrefix + command} ${text}`
+              })
+            }
+          ]
+        })
+      });
+    }
+
+    const messageContent = generateWAMessageFromContent(message.chat, {
+      viewOnceMessage: {
+        message: {
+          interactiveMessage: proto.Message.InteractiveMessage.fromObject({
+            body: proto.Message.InteractiveMessage.Body.create({
+              text: `[❗] النتيجه لي: ${text}`
+            }),
+            footer: proto.Message.InteractiveMessage.Footer.create({
+              text: "🔎 `بـحث بنـتريست`"
+            }),
+            header: proto.Message.InteractiveMessage.Header.create({
+              hasMediaAttachment: false
+            }),
+            carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
+              cards: results
+            })
+          })
+        }
+      }
+    }, {
+      quoted: message
+    });
+
+    await conn.relayMessage(message.chat, messageContent.message, { messageId: messageContent.key.id });
+
+  } catch (error) {
+    console.error(error);
+    conn.reply(message.chat, "[❗] حدث خطأ أثناء البحث. حاول مرة أخرى لاحقًا.", message);
+  }
+};
+
+// إعادة تعريف المساعدات والتعليمات
+handler.help = ["pinterest"];
+handler.tags = ["downloader"];
+handler.command = /^(بين|بينترست)$/i;
+
+export default handler;
+
+// وظيفة عشوائية لتبديل ترتيب العناصر في المصفوفة
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
-async function getGoogleImages(query) {
-let response = await fetch(`https://aemt.me/googleimage?query=${encodeURIComponent(query)}`)
-let data = await response.json()
-return data.result
-}
-
-async function sendPinterestCarousel(conn, chat, query, usedPrefix) {
-let images = await getPinterestImages(query)
-const messages = images.map((image) => [ null, null, 
-image, 
-[['u', usedPrefix + `بنترست ${query}`], ['Buscar con Google 🌐', usedPrefix + `image2 ${query}`]],
-null, 
-[['🔗 Enlace de imagen', image]], 
-[['DDDDD', sections]]
-])
-await conn.sendCarousel(chat, '💗 *نتائج بنترست*', 'Imágenes', '✨ صور بينتريست', messages)
-}
-
-async function sendGoogleCarousel(conn, chat, query, usedPrefix) {
-let images = await getGoogleImages(query);
-const messages = images.map((image) => [ null, null, 
-image, 
-[['Buscar de nuevo 🔎', usedPrefix + `image2 ${query}`], ['البحث مع بينتريست ✨', usedPrefix + `بينتريست ${query}`]], 
-null, 
-[['🔗 Enlace de imagen', image]], 
-[]
-])
-await conn.sendCarousel(chat, '🤩 *Resultados de Google*', 'Imágenes', '✅ Imágenes de Google', messages)
-}
-
-if (!query) {
-conn.reply(m.chat, '*يرجى كتابة ما تريد البحث عنه على موقع بينتريست.*', m)
-return
-}
-
-if (command === 'بين') {
-await sendPinterestCarousel(conn, m.chat, query)
-} else if (command === 'image2') {
-await sendGoogleCarousel(conn, m.chat, query)
-}
-}
-
-handler.command = /^(بين|image2)$/i
-export default handler
-
-*/
-
-import { pinterest } from '@bochilteam/scraper'
-let handler = async(m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `${lenguajeGB['smsAvisoMG']()} *مثال :*\n*${usedPrefix + command} زاك | ناروتو*` 
-try {
-const response=await fetch(`https://deliriusapi-official.vercel.app/search/pinterest?text=${text}`)
-const dataR = await response.json()
-const json=dataR.result
-//const json = await pinterest(text)
-conn.sendButton(m.chat, `🎗 نتائج البحث عن ↜ : ${text}`, `${wm}`, json.getRandom(), [
-['🔄 هـــات غـــيـــرهـــا', `${usedPrefix}بين ${text}`]], null, null, m)
-//await conn.sendFile(m.chat, json.getRandom(), 'error.jpg', `${lenguajeGB['smsAvisoEG']()} 💞 ${mid.buscador}: ${text}`.trim(), m)
-} catch (e) {
-console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
-console.log(e)
-handler.exp = false
-}}
-handler.help = ['pinterest <keyword>']
-handler.tags = ['internet']
-handler.command = /^(بين|dlpinterest|pinterestdl)$/i
-handler.exp = 50
-export default handler
-
-/*conn.sendHydrated(m.chat, `💞 𝙍𝙚𝙨𝙪𝙡𝙩𝙖𝙙𝙤 | 𝙍𝙚𝙨𝙪𝙡𝙩: ${text}`, `𝙋𝙞𝙣𝙩𝙚𝙧𝙚𝙨𝙩 | ${wm}`, null, md, '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿', null, null, [
-['🔄 هـــات غـــيـــرهـــا', `/بين ${text}`],
-['🔍 𝙂𝙤𝙤𝙜𝙡𝙚 ', `#image ${text}`],
-['🐈 𝙈𝙚𝙣𝙪', `.menu`],  
-], m)*/
+// وظيفة لتوليد رسالة صورة
+async function generateImageMessage(url) {
+  const { imageMessage } = await generateWAMessageContent({ image: { url } }, { upload: conn.waUploadToServer });
+  return imageMessage;
+                        }
