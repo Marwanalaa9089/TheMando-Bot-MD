@@ -23,8 +23,8 @@ const handler = async (m, {conn, args, participants}) => {
   const texto = `
 *< جدول المغامرين الأكثر تميزًا />*
     
-—◉ *توب ${len} EXP 🌟*
-*👤 موقعك:* ${usersExp.indexOf(m.sender) + 1} de ${usersExp.length}
+—◉ *توب ${len} دولارات 💷*
+*💷 الترتيب :* ╮───────────────────⟢\n${usersExp.indexOf(m.sender) + 1} de ${usersExp.length}/n╯───────────────────⟢
 
 ${sortedExp.slice(0, len).map(({jid, exp}, i) => `${i + 1}. ${participants.some((p) => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} exp*`).join`\n`}
 
