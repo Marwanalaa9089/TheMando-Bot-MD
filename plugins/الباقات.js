@@ -25,7 +25,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '🚀', key: m.key } })
-  const harley = 'https://envs.sh/06H.jpg'
+  const zack = 'https://envs.sh/06H.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `harley`}, body: { text: `
@@ -38,7 +38,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 ╯──────────────────⟢ـ
 *🚨:الرجاء الضغط علي زر الباقات*
 
-> Copyright © 2024 Zack`,subtitle: "HARLEY",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: harley } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
+> Copyright © 2024 Zack`,subtitle: "HARLEY",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
 
 
                             {
@@ -47,8 +47,8 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                     title: '♪ الــبــاقــات ♪',
                                     sections: [
                                         {
-                                            title: 'مــرحـ🛡ـبــا بــك فـي سورس فــلاش بـ🤖ـوت',
-                                            highlight_label: 'ســــورس فــلاش',
+                                            title: 'مــرحـ🛡ـبــا بــك فـي ســـورس رايـــزل بـ🤖ـوت',
+                                            highlight_label: 'ســــورس رايـــزل',
                                             rows: [
                                                 {
                                                     header: '𝐒𝐔𝐁𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍 𝐈𝐒 𝐅𝐑𝐄𝐄',
