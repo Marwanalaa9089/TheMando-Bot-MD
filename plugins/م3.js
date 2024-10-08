@@ -4,7 +4,7 @@ const { prepareWAMessageMedia } = pkg;
 const handler = async (m, { conn }) => {
     await conn.sendMessage(m.chat, { react: { text: '🦇', key: m.key } });
 
-    const zack = 'https://envs.sh/Sve.jpg';
+    const zack = 'https://envs.sh/I_W.jpg';
     let { exp, limit, level, role, crystal, health, upgrader, wood } = global.db.data.users[m.sender]
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
