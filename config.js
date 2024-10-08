@@ -197,8 +197,8 @@ global.htka = "*☪ ••••̩̩͙⊰•⭑*"
 global.comienzo = "• • ◕◕════"
 global.fin = " • •"
 
-global.botdate = `⫹⫺ Date :  ${moment.tz('Egypt/Cairo').format('DD/MM/YY')}`; //Asia/Jakarta
-global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz('Egypt/Cairo').format('HH:mm:ss')}`;//America/Los_Angeles
+global.botdate = `⫹⫺ Date :  ${moment.tz('Africa/Cairo').format('DD/MM/YY')}`; //Asia/Jakarta
+global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz('Africa/Cairo').format('HH:mm:ss')}`;//America/Los_Angeles
 global.fgif = {
 key: {
 participant : '0@s.whatsapp.net'},
