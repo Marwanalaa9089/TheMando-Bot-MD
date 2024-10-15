@@ -1,6 +1,6 @@
 <p align="center">
  <img width="180px" src="https://envs.sh/wHc.jpg" align="center"/>
- <h2 align="center">TheFlash-Bot-MD</h2>
+ <h2 align="center">TheRaizel-Bot-MD</h2>
  <p align="center">Este bot fue desarrollado por Zack y Naruto.</p>
 </p>
 
