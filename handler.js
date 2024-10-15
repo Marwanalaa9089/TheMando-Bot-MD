@@ -47,6 +47,7 @@ m = smsg(this, m) || m
 if (!m)
 return
 m.exp = 0
+m.dollar = 0
 m.limit = false
 m.money = false
 try {
@@ -61,6 +62,7 @@ if (typeof user !== 'object')
 global.db.data.users[m.sender] = {}
 if (user) {
 if (!isNumber(user.exp)) user.exp = 0
+if (!isNumber(user.dollar)) user.dollar = 0
 if (!('premium' in user)) user.premium = false
 if (!('muto' in user)) user.muto = false
 if (!isNumber(user.joincount)) user.joincount = 1
@@ -621,6 +623,7 @@ emas: 0,
 emerald: 0,
 esteh: 0,
 exp: 0,
+dollar: 0,
 expg: 0,
 exphero: 0,
 expired: 0,
