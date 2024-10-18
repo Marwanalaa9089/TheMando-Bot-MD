@@ -26,24 +26,21 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '📜', key: m.key } })
-  const zack = 'https://envs.sh/I_W.jpg'
+  const zack = 'https://envs.sh/Bre.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
-conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `zack`}, body: { text: `˼🦇˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
+conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `zack`}, body: { text: `˼✨˹↜ مـࢪحـبـا بـك/ي @${mentionId.split('@')[0]}
 *⌊🪪┇مـعـلـومـاتـك┇🪪⌉*
 *❐═━━━═╊⊰🦇⊱╉═━━━═❐*
-*【⚜️┇مـــســـتواك ⟣  ${level} 】*
-*【💫┇رتـبـتـك ⟣  ${role} 】*
-*【💷┇فــلــوســك ⟣  ${dollar} 】*
-*【🪙┇الــذهــب ⟣  ${gold} 】*
-*【🦇┇الـنـقـاط ⟣  ${exp} 】*
+*【⚜️┇مـــســـتواك ┇  ${level} 】*
+*【💫┇رتـبـتـك ┇  ${role} 】*
 *●━── ⊱•┇«🦇»┇•⊰ ──━●*
 *⌊🤖┇الــبــوت┇🤖⌉*
 *●━── ⊱•┇«🦇»┇•⊰ ──━●*
-*【🦇┇اسم البوت ⟣  رايـزل 】*
-*【📌┇الـتـشـغـيل ⟣  ${uptime} 】*
-*【📅┇الــيــوم ⟣  ${week} 】*
-*【🗓┇الـتـاريـخ ⟣  ${time} 】*
+*【✨┇اسم البوت ┇ 𝑀𝐴𝑁𝐷𝛩 】*
+*【📌┇الـتـشـغـيل ┇  ${uptime} 】*
+*【📅┇الــيــوم ┇  ${week} 】*
+*【🗓┇الـتـاريـخ ┇  ${time} 】*
 *【🎶┇الــمــســتـخـدمـيـن ⟣  ${rtotalreg} 】*
 *❐═━━━═╊⊰🦇⊱╉═━━━═❐*
 > © 𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊 2025`,subtitle: "zack",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: zack } }, { upload: conn.waUploadToServer }, {quoted: m}))},
@@ -56,10 +53,10 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                             {
                                 name: 'single_select',
                                 buttonParamsJson: JSON.stringify({
-                                    title: '⌈🦇╎اوامــر الــبــوت╎🦇⌋',
+                                    title: '⌈✨╎اوامــر الــبــوت╎✨⌋',
                                     sections: [
                                         {
-                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام رايــزل بـ🤖ـوت',
+                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام ماندو بـ🤖ـوت',
                                             highlight_label: '𝐍𝐀𝐑𝐔𝐓𝐎 & 𝐙𝐀𝐂𝐊',
                                             rows: [
                                                 {
@@ -158,7 +155,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                      },
                      {
                name: "cta_url",
-               buttonParamsJson: '{"display_text":"⌈📲╎قـنـاة الــبــوت╎📲⌋","url":"https://whatsapp.com/channel/0029VaoUBmSKmCPIIiEatx1H","merchant_url":"https://whatsapp.com/channel/0029VaoUBmSKmCPIIiEatx1H"}'
+               buttonParamsJson: '{"display_text":"⌈📲╎قـنـاة الــبــوت╎📲⌋","url":"https://whatsapp.com/channel/0029VarJdJO7dmeZS5ZKft1U","merchant_url":"https://whatsapp.com/channel/0029VarJdJO7dmeZS5ZKft1U"}'
                             }
                         ]
                     }
