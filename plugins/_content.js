@@ -14,7 +14,7 @@ global.redesMenu = [canal1, canal2, canal3, canal4, soporteGB, grupo1, grupo2, g
 global.accountsgb = [canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia].getRandom()
 
 global.canalIdGB = ["120363323738773490@newsletter", "120363334163906836@newsletter", "120363288139614262@newsletter", "120363334163906836@newsletter"]
-global.canalNombreGB = ["𝐀𝐫𝐚𝐚𝐛 𝐙𝐚𝐜𝐤", "𝐑𝐀𝐈𝐙𝐄𝐋﹝🦇﹞𝐔𝐏𝐃𝐀𝐓𝐄", "𝐅𝐋𝐀𝐒𝐇﹝🇮🇹﹞𝐓𝐄𝐀𝐌", "𝐑𝐀𝐈𝐙𝐄𝐋﹝🦇﹞𝐔𝐏𝐃𝐀𝐓𝐄"]
+global.canalNombreGB = ["𝐵𝛩𝑇_𝑀𝐴𝑁𝐷𝛩", "𝐵𝛩𝑇_𝑀𝐴𝑁𝐷𝛩", "𝐵𝛩𝑇_𝑀𝐴𝑁𝐷𝛩", "𝐵𝛩𝑇_𝑀𝐴𝑁𝐷𝛩"]
 global.channelRD = await getRandomChannel()
 
 // Imágenes 
